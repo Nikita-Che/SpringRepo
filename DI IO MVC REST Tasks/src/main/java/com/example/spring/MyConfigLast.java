@@ -6,7 +6,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 @PropertySource("classpath:myApp.properties")
 //@ComponentScan("com.example.spring")
-public class MyConfig {
+public class MyConfigLast {
 
     @Bean
     @Scope("prototype")
