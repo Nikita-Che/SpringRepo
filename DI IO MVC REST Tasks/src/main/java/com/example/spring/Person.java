@@ -1,6 +1,11 @@
 package com.example.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
+    @Autowired
     private Pet pet;
     private String surname;
     private int age;
@@ -9,13 +14,13 @@ public class Person {
         return surname;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     public void setSurname(String surname) {
         System.out.println("surnme setted");
         this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public void setAge(int age) {
@@ -28,15 +33,29 @@ public class Person {
         this.pet = pet;
     }
 
-//    public Person(Pet pet) {
-//        System.out.println("person bean created");
+//    @Autowired
+//    public void setPet(Pet pet) {
+//        System.out.println("Class person : SetPEt");
 //        this.pet = pet;
 //    }
 
-        public Person() {
-        System.out.println("person bean created");
+//    @Autowired
+//    public void anyMethodName(Pet pet) {
+//        System.out.println("Class person : SetPEt from anyMethodName");
+//        this.pet = pet;
+//    }
+
+//    @Autowired
+//    public Person(Pet pet) {
+//        System.out.println("person Bean created");
+//        this.pet = pet;
+//    }
+
+    public Person() {
+        System.out.println("Person bean created");
     }
-    public void callYourPet(){
+
+    public void callYourPet() {
         System.out.println("Privet pidor shersytanoi");
         pet.say();
     }

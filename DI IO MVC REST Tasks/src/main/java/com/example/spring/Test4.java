@@ -8,13 +8,13 @@ public class Test4 {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext2.tld");
 
-        Dog myDog = context.getBean("myPet", Dog.class);
-        myDog.setName("belka");
-        Dog yourDog = context.getBean("myPet", Dog.class);
-        yourDog.setName("srtrelka");
-
-        System.out.println(myDog.getName());
-        System.out.println(yourDog.getName());
+//        Dog myDog = context.getBean("myPet", Dog.class);
+//        myDog.setName("belka");
+//        Dog yourDog = context.getBean("myPet", Dog.class);
+//        yourDog.setName("srtrelka");
+//
+//        System.out.println(myDog.getName());
+//        System.out.println(yourDog.getName());
 
 
 //        System.out.println(myDog == yourDog);
