@@ -1,5 +1,8 @@
 package com.example.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component("dogBean")
 public class Dog implements Pet{
     private String name;
 
@@ -12,13 +15,15 @@ public class Dog implements Pet{
         System.out.println("Gaf GAf bla");
     }
 
-    public void init() {
-        System.out.println("Class DOG: init method");
-    }
 
-    public void destroy() {
-        System.out.println("Class DOG: destroy method");
-    }
+
+//    public void init() {
+//        System.out.println("Class DOG: init method");
+//    }
+//
+//    public void destroy() {
+//        System.out.println("Class DOG: destroy method");
+//    }
 
 
     //    public String getName() {

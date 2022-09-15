@@ -1,11 +1,13 @@
 package com.example.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
-    @Autowired
+//    @Autowired
+
     private Pet pet;
     private String surname;
     private int age;
@@ -28,16 +30,17 @@ public class Person {
         this.age = age;
     }
 
-    public void setPet(Pet pet) {
-        System.out.println("Class person : SetPEt");
-        this.pet = pet;
-    }
-
-//    @Autowired
 //    public void setPet(Pet pet) {
 //        System.out.println("Class person : SetPEt");
 //        this.pet = pet;
 //    }
+
+    @Autowired
+    @Qualifier("catBean")
+    public void setPet(Pet pet) {
+        System.out.println("Class person : SetPEt");
+        this.pet = pet;
+    }
 
 //    @Autowired
 //    public void anyMethodName(Pet pet) {
