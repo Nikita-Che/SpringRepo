@@ -1,4 +1,4 @@
-package aop.aspects;
+package aop;
 
 public abstract class AbstractLibrary {
 //    abstract public void getBook ();
