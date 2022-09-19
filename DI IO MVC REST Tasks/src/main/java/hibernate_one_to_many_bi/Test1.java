@@ -19,15 +19,20 @@ public class Test1 {
         try {
 
 
-            session = factory.getCurrentSession();
 
-            session.beginTransaction();
 
-            Employee employee = session.get(Employee.class,4);
-            session.delete(employee);
 
-            session.getTransaction().commit();
-            System.out.println("DONE!");
+
+
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//
+//            Employee employee = session.get(Employee.class,3);
+//            session.delete(employee);
+//
+//            session.getTransaction().commit();
+//            System.out.println("DONE!");
 
 
 
@@ -46,25 +51,35 @@ public class Test1 {
 
 
 
-//            session = factory.getCurrentSession();
-//
-//            session.beginTransaction();
-//
-//            Department department = session.get(Department.class,1);
-//            System.out.println(department);
-//            System.out.println(department.getEmps());
-//
-//            session.getTransaction().commit();
-//            System.out.println("DONE!");
+            session = factory.getCurrentSession();
+
+            session.beginTransaction();
+
+            System.out.println("Get department");
+            Department department = session.get(Department.class,3);
+            System.out.println("Show department");
+
+            System.out.println(department);
+
+
+
+            System.out.println("Get emplyees of department");
+            System.out.println(department.getEmps());
+
+            session.getTransaction().commit();
+            System.out.println("DONE!");
 
 
 
 //            session = factory.getCurrentSession();
-//            Department dep = new Department("it",300,1200);
-//            Employee employee = new Employee("Vasilii","Govnov",1100);
-//            Employee employee2 = new Employee("Elena","Hueva",500);
+//            Department dep = new Department("SALES",800,1500);
+//            Employee employee = new Employee("Vasilii","Govnov",800);
+//            Employee employee1 = new Employee("Petr","Shitov",1500);
+//            Employee employee2 = new Employee("Nikolai","Dermov",1200);
+//
 //
 //            dep.addEmployeeToDepartment(employee);
+//            dep.addEmployeeToDepartment(employee1);
 //            dep.addEmployeeToDepartment(employee2);
 //
 //            session.beginTransaction();

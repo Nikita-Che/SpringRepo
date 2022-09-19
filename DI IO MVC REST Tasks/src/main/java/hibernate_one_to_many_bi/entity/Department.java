@@ -23,7 +23,7 @@ public class Department {
     @Column(name = "min_salary")
     private int munSalary;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH,CascadeType.MERGE},mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.EAGER)
     private List<Employee> emps;
 
     public Department() {
@@ -35,8 +35,8 @@ public class Department {
         this.munSalary = munSalary;
     }
 
-    public void addEmployeeToDepartment (Employee employee) {
-        if(emps == null) {
+    public void addEmployeeToDepartment(Employee employee) {
+        if (emps == null) {
             emps = new ArrayList<>();
         }
         emps.add(employee);
