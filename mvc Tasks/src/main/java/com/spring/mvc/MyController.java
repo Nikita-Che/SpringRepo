@@ -23,6 +23,11 @@ public class MyController {
 
     @RequestMapping("/askDetails")
     public String askEmployeeDetails(Model model) {
+
+//        Employee employee = new Employee();
+//        employee.setName("Ivan");
+//        employee.setSurname("Petrov");
+//        employee.setSalary(200);
         model.addAttribute("employee",new Employee());
 
         return "ask-emp-detail-view";
@@ -30,6 +35,15 @@ public class MyController {
 
     @RequestMapping("/showDetails")
     public String showEmpDetails(@ModelAttribute("employee") Employee employee) {
+
+        String name = employee.getName();
+        employee.setName(name+" pidorov");
+
+        String surname = employee.getSurname();
+        employee.setSurname(surname  +" govnov");
+
+        int salaryOld = employee.getSalary();
+        employee.setSalary(salaryOld+1000);
 
 
 
