@@ -35,10 +35,11 @@
     <br>
     <br>
     Foreign language(s)
-    EN <form:checkbox path="languages" value="Eanglish"/>
-    RU <form:checkbox path="languages" value="Russian"/>
-    DE <form:checkbox path="languages" value="German"/>
+<%--    EN <form:checkbox path="languages" value="Eanglish"/>--%>
+<%--    RU <form:checkbox path="languages" value="Russian"/>--%>
+<%--    DE <form:checkbox path="languages" value="German"/>--%>
 
+    <form:checkboxes path="languages" items="${employee.languageList}"/>
     <br>
     <br>
     <input type="submit" value="OK">
