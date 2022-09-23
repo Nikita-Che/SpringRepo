@@ -1,17 +1,34 @@
 package com.spring.mvc;
 
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
 
+    @Size(min = 2,max = 15, message = "Name must be min 2 max 15")
     private String name;
+//    @NotEmpty(message = "surname must be!")
+    @NotBlank(message = "surname must be!")
     private String surname;
+    @Min(value = 100, message = "must be more than 101")
+    @Max(value = 1000, message = "must be less than 1001")
     private int salary;
     private String department;
     private Map<String, String> departments;
     private String[] languages;
     private Map<String, String> languageList;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern xxx-xx-xx")
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public Map<String, String> getLanguageList() {
         return languageList;
