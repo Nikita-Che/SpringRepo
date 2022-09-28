@@ -36,6 +36,10 @@ Language(s) :
 
 Phone number: ${employee.phoneNumber}
 
+<br>
+
+Email : ${employee.email}
+
 
 </body>
 

@@ -1,5 +1,7 @@
 package com.spring.mvc;
 
+import com.spring.mvc.validation.CheckEmail;
+
 import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,8 +21,19 @@ public class Employee {
     private String[] languages;
     private Map<String, String> languageList;
 
+    @CheckEmail
+    private String email;
+
     @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern xxx-xx-xx")
     private String phoneNumber;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getPhoneNumber() {
         return phoneNumber;
