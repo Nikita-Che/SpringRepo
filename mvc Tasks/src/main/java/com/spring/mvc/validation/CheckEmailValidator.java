@@ -15,7 +15,7 @@ public class CheckEmailValidator implements ConstraintValidator<CheckEmail,Strin
 
     @Override
     public boolean isValid(String enteredValue, ConstraintValidatorContext constraintValidatorContext) {
-        
+
         return enteredValue.endsWith(endOfEmail);
     }
 }
