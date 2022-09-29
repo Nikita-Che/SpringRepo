@@ -30,18 +30,26 @@ public class MyRestController {
 
         Employee employee = employeeService.getEmployee(id);
         if (employee == null) {
-            throw new NoSuchEmployeeException("Нет такова работника с таким АЙДИ" + id);
+            throw new NoSuchEmployeeException("Нет такова работника с таким АЙДИ " + id);
         }
 
         return employee;
     }
 
     @ExceptionHandler
-    public ResponseEntity<EmployeeIncorrectData> handleExeption(NoSuchEmployeeException exception) {
+    public ResponseEntity<EmployeeIncorrectData> handleException(NoSuchEmployeeException exception) {
         EmployeeIncorrectData data = new EmployeeIncorrectData();
         data.setInfo(exception.getMessage());
 
         return new ResponseEntity<>(data, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<EmployeeIncorrectData> handleException(Exception exception) {
+        EmployeeIncorrectData data = new EmployeeIncorrectData();
+        data.setInfo(exception.getMessage());
+
+        return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
     }
 
 }
