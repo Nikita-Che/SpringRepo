@@ -3,6 +3,7 @@ import spring.rest.entity.Employee;
 import java.util.List;
 
 public interface EmployeeDao {
+
     List<Employee> getAllEmployees();
 
     public void saveEmployee(Employee employee);
